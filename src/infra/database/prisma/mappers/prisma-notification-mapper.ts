@@ -10,4 +10,13 @@ export class PrismaNotificationMapper {
       createdAt: notification.createdAt,
     };
   }
+
+  static toDomain(rawNotification: any) {
+    return new Notification({
+      content: rawNotification.content,
+      category: rawNotification.category,
+      recipientId: rawNotification.recipientId,
+      createdAt: rawNotification.createdAt,
+    });
+  }
 }
